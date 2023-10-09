@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>상품 추가</title>
+    <script>
+        function validateForm() {
+            // 필수 항목 유효성 검사를 수행합니다.
+            var itemName = document.getElementById("itemName").value;
+            var itemPrice = document.getElementById("itemPrice").value;
+            var itemQuantity = document.getElementById("itemQuantity").value;
+            var purchaseDate = document.getElementById("purchaseDate").value;
+
+            if (itemName === "" || itemPrice === "" || itemQuantity === "" || purchaseDate === "") {
+                alert("모든 필수 항목을 입력하세요.");
+                return false;
+            }
+            return true;
+        }
+
+        function showConfirmation() {
+            if (validateForm()) {
+                alert("게시물이 추가됩니다.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>상품 추가</h1>
+    <form action="index.html" onsubmit="return validateForm()">
+        <label for="itemName">품명:</label>
+        <input type="text" id="itemName" name="itemName" required><br>
+
+        <label for="itemPrice">가격:</label>
+        <input type="number" id="itemPrice" name="itemPrice" required><br>
+
+        <label for="itemQuantity">수량:</label>
+        <input type="number" id="itemQuantity" name="itemQuantity" required><br>
+
+        <label for="purchaseDate">구매일:</label>
+        <input type="date" id="purchaseDate" name="purchaseDate" required><br>
+
+        <input type="submit" value="추가" onclick="showConfirmation()">
+    </form>
+</body>
+</html>

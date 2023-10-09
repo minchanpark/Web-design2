@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>상품 편집</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 90%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0000b3;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>상품 편집</h1>
+        <form action="view.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="itemName">품명:</label>
+                <input type="text" id="itemName" name="itemName" value="Product 1" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="itemPrice">가격:</label>
+                <input type="number" id="itemPrice" name="itemPrice" value="10.00" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="itemQuantity">수량:</label>
+                <input type="number" id="itemQuantity" name="itemQuantity" value="100" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="purchaseDate">구매일:</label>
+                <input type="date" id="purchaseDate" name="purchaseDate" value="2023-10-09" required class="form-control">
+            </div>
+
+            <input type="submit" value="수정" class="btn-primary">
+        </form>
+        <button onclick="confirmEdit()">취소</button>
+    </div>
+
+    <script>
+        function validateForm() {
+            // 필수 항목 유효성 검사를 수행합니다.
+            var itemName = document.getElementById("itemName").value;
+            var itemPrice = document.getElementById("itemPrice").value;
+            var itemQuantity = document.getElementById("itemQuantity").value;
+            var purchaseDate = document.getElementById("purchaseDate").value;
+
+            if (itemName === "" || itemPrice === "" || itemQuantity === "" || purchaseDate === "") {
+                alert("모든 필수 항목을 입력하세요.");
+                return false;
+            }
+            return true;
+        }
+
+        function confirmEdit() {
+            if (confirm("상품을 수정할까요?")) {
+                // 수정 로직을 추가하세요.
+                alert("상품이 수정되었습니다.");
+                window.location.href = "view.html?id=1"; // 수정한 상품 상세 정보 페이지로 이동
+            }
+        }
+    </script>
+</body>
+</html>

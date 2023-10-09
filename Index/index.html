@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>상품 목록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #0078d4;
+        }
+        .add-button {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 15px;
+            float: right;
+        }
+        .search-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .search-input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .page-number {
+            margin: 0 5px;
+            display: inline-block;
+            cursor: pointer;
+            color: #0078d4;
+        }
+        .page-number.current {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>상품 목록</h1>
+    </header>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요">
+            <button class="search-button">검색</button>&ensp;<a class="add-button" href="add.html">상품 추가</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>품명</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>구매일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2</td>
+                    <td><a href="view.html?id=2">갤럭시북 프로</a></td>
+                    <td>$200.00</td>
+                    <td>50</td>
+                    <td>2023-10-24</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="view.html?id=2">에어팟</a></td>
+                    <td>$60.00</td>
+                    <td>50</td>
+                    <td>2023-2-10</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="view.html?id=2">갤럭시 s21</a></td>
+                    <td>$60.00</td>
+                    <td>50</td>
+                    <td>2023-1-10</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="view.html?id=2">아이폰 15pro</a></td>
+                    <td>$200.00</td>
+                    <td>50</td>
+                    <td>2023-5-16</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="view.html?id=2">아이패드 에어3</a></td>
+                    <td>$70.00</td>
+                    <td>50</td>
+                    <td>2023-2-10</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="view.html?id=2">갤럭시탭 s6 lite</a></td>
+                    <td>$30.00</td>
+                    <td>50</td>
+                    <td>2023-9-10</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="view.html?id=2">갤럭시 버즈</a></td>
+                    <td>$20.00</td>
+                    <td>50</td>
+                    <td>2023-04-10</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="view.html?id=2">갤럭시 워치1</a></td>
+                    <td>$20.00</td>
+                    <td>50</td>
+                    <td>2022-01-10</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="view.html?id=2">애플워치 se2</a></td>
+                    <td>$50.00</td>
+                    <td>50</td>
+                    <td>2023-9-17</td>
+                </tr>
+ 
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span class="page-number current">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            <!-- 페이지 번호를 추가하려면 위와 같이 반복하여 추가합니다. -->
+        </div>
+    </div>
+</body>
+</html>
