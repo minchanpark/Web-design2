@@ -17,47 +17,11 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-control {
-            width: 90%;
-            padding: 10px;
-            font-size: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .btn-primary {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            background-color: #0000b3;
-        }
         h1 {
             text-align: center;
         }
         label {
             font-weight: bold;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #999;
         }
     </style>
 </head>
@@ -66,42 +30,55 @@
         <h1>메뉴 상세정보</h1>
         <form action="view.html" onsubmit="return validateForm()">
             <div class="form-group">
-                <label for="itemName">매뉴:</label>
-                <input type="text" id="itemName" name="itemName" value="Product 1" required class="form-control">
+                <label for="itemName">메뉴:</label>
+                <span id="itemName">삼계탕</span>
             </div>
 
             <div class="form-group">
                 <label for="itemPrice">식당이름:</label>
-                <input type="number" id="itemPrice" name="itemPrice" value="10.00" required class="form-control">
+                <span id="itemPrice">복이네</span>
             </div>
 
             <div class="form-group">
                 <label for="price">가격:</label>
-                <input type="number" id="price" name="price" value="100" required class="form-control">
+                <span id="price">12000원</span>
             </div>
 
             <div class="form-group">
                 <label for="sorting">분류:</label>
-                <input type="date" id="sorting" name="sorting" value="2023-10-09" required class="form-control">
+                <span id="sorting">한식</span>
             </div>
 
             <div class="form-group">
                 <label for="preference">선호도:</label>
-                <input type="text" id="preference" name="preference" value="Product 1" required class="form-control">
+                <span id="preference">상</span>
             </div>
 
             <div class="form-group">
                 <label for="purchaseDate">하루 판매량:</label>
-                <input type="text" id="purchaseDate" name="purchaseDate" value="Product 1" required class="form-control">
+                <span id="purchaseDate">4개</span>
             </div>
 
-            <input type="submit" value="수정" class="btn-primary">
+            <input type="button" value="수정" class="btn-primary" onclick="redirectToEditPage()">
+            <input type="button" value="삭제" class="btn-primary" onclick="confirmDelete()">
         </form>
     </div>
     <script>
         function redirectToEditPage() {
             window.location.href = "edit.html?id=2"; // 수정 페이지 URL로 이동
         }
+
+        function confirmDelete() {
+            var result = confirm("삭제하시겠습니까?");
+            if (result) {
+                alert("삭제되었습니다.");
+                window.location.href = "index.html"; // index.html로 이동
+            } else {
+                alert("삭제가 취소되었습니다.");
+            }
+        }
     </script>
 </body>
 </html>
+
+
