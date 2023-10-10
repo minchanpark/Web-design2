@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>상품 편집</title>
+    <title>메뉴 편집</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,36 +61,38 @@
 </head>
 <body>
     <div class="container">
-        <h1>상품 편집</h1>
+        <h1>메뉴 편집</h1>
         <form action="view.html" onsubmit="return validateForm()">
             <div class="form-group">
-                <label for="itemName">품명:</label>
-                <input type="text" id="itemName" name="itemName" value="Product 1" required class="form-control">
+                <label for="itemName">식당이름:</label>
+                <input type="text" id="itemName" name="itemName" value="삼계탕" required class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="itemPrice">가격:</label>
-                <input type="number" id="itemPrice" name="itemPrice" value="10.00" required class="form-control">
+                <input type="text" id="itemPrice" name="itemPrice" value="12000원" required class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="itemQuantity">수량:</label>
-                <input type="number" id="itemQuantity" name="itemQuantity" value="100" required class="form-control">
+                <label for="itemQuantity">분류:</label>
+                <input type="text" id="itemQuantity" name="itemQuantity" value="한식" required class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="purchaseDate">구매일:</label>
-                <input type="date" id="purchaseDate" name="purchaseDate" value="2023-10-09" required class="form-control">
+                <label for="preference">선호도:</label>
+                <input type="text" id="preference" name="preference" value="상" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="purchaseDate">하루 판매량:</label>
+                <input type="text" id="purchaseDate" name="purchaseDate" value="4개" required class="form-control">
             </div>
 
-            <input type="submit" value="수정" class="btn-primary">
+            <input type="submit" value="수정" class="btn-primary" onclick="confirmEdit()">
         </form>
-        <button onclick="confirmEdit()">취소</button>
+        <button onclick="cancelEdit()">취소</button>
     </div>
-
     <script>
         function validateForm() {
-            // 필수 항목 유효성 검사를 수행합니다.
             var itemName = document.getElementById("itemName").value;
             var itemPrice = document.getElementById("itemPrice").value;
             var itemQuantity = document.getElementById("itemQuantity").value;
@@ -105,10 +107,13 @@
 
         function confirmEdit() {
             if (confirm("상품을 수정할까요?")) {
-                // 수정 로직을 추가하세요.
                 alert("상품이 수정되었습니다.");
-                window.location.href = "view.html?id=1"; // 수정한 상품 상세 정보 페이지로 이동
+                window.location.href = "view.html?id=1";
             }
+        }
+
+        function cancelEdit() {
+            alert("상품 수정이 취소되었습니다.");
         }
     </script>
 </body>

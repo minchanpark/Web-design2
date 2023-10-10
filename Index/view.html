@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>상품 상세 정보</title>
+    <title>메뉴 상세정보</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 90%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0000b3;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #999;
+        }
+    </style>
 </head>
 <body>
-    <h1>상품 상세 정보</h1>
-    <!-- JavaScript를 사용하여 해당 상품의 세부 정보를 표시합니다. -->
-    <p>품목: 상품 1</p>
-    <p>품명: Product 1</p>
-    <p>가격: $10.00</p>
-    <p>수량: 100</p>
-    <p>구매일: 2023-10-09</p>
-    <p>재고: 50</p>
-    <p>상태: 판매 중</p>
+    <div class="container">
+        <h1>메뉴 상세정보</h1>
+        <form action="view.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="itemName">매뉴:</label>
+                <input type="text" id="itemName" name="itemName" value="Product 1" required class="form-control">
+            </div>
 
-    <a href="edit.html?id=1">편집</a>
-    <button onclick="deleteProduct()">삭제</button>
+            <div class="form-group">
+                <label for="itemPrice">식당이름:</label>
+                <input type="number" id="itemPrice" name="itemPrice" value="10.00" required class="form-control">
+            </div>
 
+            <div class="form-group">
+                <label for="price">가격:</label>
+                <input type="number" id="price" name="price" value="100" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="sorting">분류:</label>
+                <input type="date" id="sorting" name="sorting" value="2023-10-09" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="preference">선호도:</label>
+                <input type="text" id="preference" name="preference" value="Product 1" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="purchaseDate">하루 판매량:</label>
+                <input type="text" id="purchaseDate" name="purchaseDate" value="Product 1" required class="form-control">
+            </div>
+
+            <input type="submit" value="수정" class="btn-primary">
+        </form>
+    </div>
     <script>
-        function deleteProduct() {
-            if (confirm("상품을 삭제할까요?")) {
-                // 삭제 로직을 추가하세요.
-                alert("상품이 삭제되었습니다.");
-                window.location.href = "index.html";
-            }
+        function redirectToEditPage() {
+            window.location.href = "edit.html?id=2"; // 수정 페이지 URL로 이동
         }
     </script>
 </body>

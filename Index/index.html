@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>상품 목록</title>
+    <title>음식 메뉴 소개 사이트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,10 +52,10 @@
             color: #fff;
             border: none;
             border-radius: 5px;
-            padding: 4px 10px;
+            padding: 5px 15px;
             cursor: pointer;
             text-decoration: none;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             float: right;
         }
         .search-container {
@@ -75,113 +75,132 @@
             padding: 5px 10px;
             cursor: pointer;
         }
-        .pagination {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .page-number {
-            margin: 0 5px;
-            display: inline-block;
+        .edit-button, .delete-button {
             cursor: pointer;
-            color: #0078d4;
-        }
-        .page-number.current {
-            font-weight: bold;
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>상품 목록</h1>
+        <h1>메뉴 소개</h1>
     </header>
     <div class="container">
         <div class="search-container">
             <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-            <button class="search-button">검색</button>&ensp;<a class="add-button" href="add.html">상품 추가</a>
+            <button class="search-button">검색</button>
         </div>
+        <a class="add-button" href="add.html">메뉴 추가</a>
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>품명</th>
+                    <th>번호</th>
+                    <th>메뉴</th>
+                    <th>식당이름</th>
                     <th>가격</th>
-                    <th>수량</th>
-                    <th>구매일</th>
+                    <th>분류</th>
+                    <th>선호도</th>
+                    <th>하루 판매량</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td>1</td>
+                    <td><a href="view.html?id=1">삼계탕</a></td>
+                    <td>복이네</td>
+                    <td>12000원</td>
+                    <td>한식</td>
+                    <td>상</td>
+                    <td>4개</td>
+                </tr>
+                <tr>
                     <td>2</td>
-                    <td><a href="view.html?id=2">갤럭시북 프로</a></td>
-                    <td>$200.00</td>
-                    <td>50</td>
-                    <td>2023-10-24</td>
+                    <td><a href="view.html?id=2">감자탕</a></td>
+                    <td>누른마을</td>
+                    <td>10000원</td>
+                    <td>한식</td>
+                    <td>중</td>
+                    <td>5개</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td><a href="view.html?id=2">에어팟</a></td>
-                    <td>$60.00</td>
-                    <td>50</td>
-                    <td>2023-2-10</td>
+                    <td><a href="view.html?id=2">자장면</a></td>
+                    <td>호야네</td>
+                    <td>8000원</td>
+                    <td>중식</td>
+                    <td>상</td>
+                    <td>8개</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td><a href="view.html?id=2">갤럭시 s21</a></td>
-                    <td>$60.00</td>
-                    <td>50</td>
-                    <td>2023-1-10</td>
+                    <td><a href="view.html?id=2">짬뽕</a></td>
+                    <td>이서방반점</td>
+                    <td>9000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>10개</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td><a href="view.html?id=2">아이폰 15pro</a></td>
-                    <td>$200.00</td>
-                    <td>50</td>
-                    <td>2023-5-16</td>
+                    <td><a href="view.html?id=2">우동</a></td>
+                    <td>우울할때</td>
+                    <td>7000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>4개</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td><a href="view.html?id=2">아이패드 에어3</a></td>
-                    <td>$70.00</td>
-                    <td>50</td>
-                    <td>2023-2-10</td>
+                    <td><a href="view.html?id=2">비빔밥</a></td>
+                    <td>한식기행</td>
+                    <td>10000원</td>
+                    <td>한식</td>
+                    <td>하</td>
+                    <td>3개</td>
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td><a href="view.html?id=2">갤럭시탭 s6 lite</a></td>
-                    <td>$30.00</td>
-                    <td>50</td>
-                    <td>2023-9-10</td>
+                    <td><a href="view.html?id=2">갈비탕</a></td>
+                    <td>갈비맛집</td>
+                    <td>13000원</td>
+                    <td>한식</td>
+                    <td>최상</td>
+                    <td>4개</td>
                 </tr>
                 <tr>
                     <td>8</td>
-                    <td><a href="view.html?id=2">갤럭시 버즈</a></td>
-                    <td>$20.00</td>
-                    <td>50</td>
-                    <td>2023-04-10</td>
+                    <td><a href="view.html?id=2">간장게장</a></td>
+                    <td>게장이야기</td>
+                    <td>20000원</td>
+                    <td>한식</td>
+                    <td>상</td>
+                    <td>4개</td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td><a href="view.html?id=2">갤럭시 워치1</a></td>
-                    <td>$20.00</td>
-                    <td>50</td>
-                    <td>2022-01-10</td>
+                    <td><a href="view.html?id=2">간장 찜닭</a></td>
+                    <td>안동식당</td>
+                    <td>23000원</td>
+                    <td>한식</td>
+                    <td>하</td>
+                    <td>2개</td>
                 </tr>
                 <tr>
                     <td>10</td>
-                    <td><a href="view.html?id=2">애플워치 se2</a></td>
-                    <td>$50.00</td>
-                    <td>50</td>
-                    <td>2023-9-17</td>
+                    <td><a href="view.html?id=2">깐풍기</a></td>
+                    <td>홍이네</td>
+                    <td>30000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>1개</td>
                 </tr>
- 
             </tbody>
         </table>
-        <div class="pagination">
-            <span class="page-number current">1</span>
-            <span class="page-number">2</span>
-            <span class="page-number">3</span>
-            <!-- 페이지 번호를 추가하려면 위와 같이 반복하여 추가합니다. -->
-        </div>
     </div>
 </body>
 </html>
